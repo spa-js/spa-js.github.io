@@ -23,3 +23,8 @@ Create markdown or liquid file in directory `_posts/`
 ### [License](LICENSE)
 Content original to the site is licensed under a [Creative Commons Attribution License (CC-BY 3.0)](https://creativecommons.org/licenses/by/3.0/)
 
+
+# Reference items
+- “Best Practices on the Move: Building Web Apps for Mobile Devices” by Ernst de Haan
+	- http://queue.acm.org/detail.cfm?ref=rss&id=2507894
+
