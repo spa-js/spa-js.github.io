@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 baseurl: http://spa-js.github.io
+=======
+baseurl: ''
+>>>>>>> gh-pages
 name: Single Page Apps
 description: 'Centralized recommendations, guidelines, and best practices for SPA (Single Page Apps)'
 #GitHub Pages defaults
