@@ -1,4 +1,4 @@
-baseurl: http://spa-js.github.io/single-page-apps
+baseurl: http://spa-js.github.io
 name: Single Page Apps
 description: 'Centralized recommendations, guidelines, and best practices for SPA (Single Page Apps)'
 #GitHub Pages defaults
