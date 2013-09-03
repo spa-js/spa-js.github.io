@@ -1,7 +1,7 @@
 ---
 layout: default
+title: Single Page App Developer Checklist
 category: productivity
-tagline: "Single Page App Developer Checklist"
 tags: [development, lifecycle]
 ---
 
