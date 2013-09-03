@@ -1,6 +1,6 @@
-baseurl: http://csantanapr.github.io/single-page-apps
+baseurl: http://spa-js.github.io/single-page-apps
 name: Single Page Apps
-description: 'Centralized recomendations, guidelines, and best practices for SPA (Single Page Apps)'
+description: 'Centralized recommendations, guidelines, and best practices for SPA (Single Page Apps)'
 #GitHub Pages defaults
 safe: true
 lsi: false
