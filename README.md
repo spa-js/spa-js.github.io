@@ -1,9 +1,9 @@
-# SPA (Single Page Apps) Website
+# [SPAJS](http://spajs.io) (Single Page Apps) Website
 
 Centralized recomendations, guidelines, and best practices for developing SPA (Single Page Apps)
 
-## Hosted Live with [Github Pages](http://pages.github.com/)
-[http://csantanapr.github.io/single-page-apps/](http://csantanapr.github.io/single-page-apps/)
+## Hosted Live with Github Pages
+## [http://spajs.io](http://spajs.io)
 
 ## Install
 - Install jekyll `gem install jekyll`
@@ -16,6 +16,9 @@ Create markdown or liquid file in directory `_posts/`
 ## Preview locally with baseurl
     jekyll serve --watch --baseurl ''
     open http://localhost:4000/
+
+## Collaborate, Issues, Contribute
+- [Issues] (https://github.com/spa-js/spa-js.github.io/issues?state=open) 
 
 ## References
 - Site is built using [jekyll](http://jekyllrb.com/)
