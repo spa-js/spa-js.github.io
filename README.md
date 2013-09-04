@@ -20,6 +20,9 @@ Create markdown or liquid file in directory `_posts/`
 ## Collaborate, Issues, Contribute
 - [Issues] (https://github.com/spa-js/spa-js.github.io/issues?state=open) 
 
+## MileStones
+- [MileStones] (https://github.com/spa-js/spa-js.github.io/issues/milestones)
+
 ## References
 - Site is built using [jekyll](http://jekyllrb.com/)
 
