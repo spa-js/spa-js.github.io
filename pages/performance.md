@@ -26,50 +26,63 @@ First impressions are critical for any Web App.  This is even more obvious for a
 		- Destroy the view and all its children, saving state if needed. This can actually get quite complex to manage if the child widget and/or state is complex. But, if its unlikely the user will revisit the view again, or there is little stateful concerns, then prune the fat, and clean up memory and DOM resources.
 		- Use a DomCache. This involves offloading the view's node tree to a "domCache" (DomFragment) after they have been transitioned out. Then if the view is needed again, reinsert it back into the master DOM. This is good for view likely to be revisited, or requires a lot of state and setup.
 
+
 ## Resource management
-Reduce the number of files loaded
-	- Images
-		- Use image sprites and CSS image offfsets
-		- Use CSS media queries to only load the proper size image for device
-		- Consider data-uri in CSS over discreet files for small images like icons.
-		- Consider inline SVG images in HTML, or convert SVG to data-uri and put into CSS
-		- Font icons can be used instead of small image files and defined using `@font-face` rule in CSS.
-			- [Font Awesome](http://fortawesome.github.io/Font-Awesome/) has a great collection of icons defined this way.
-	- CSS
-		- Optimize CSS to inline `@include` external CSS files
-		- Use CSS3 instead of images. Things like gradients, shadows, and rounded corners are faster through CSS than using discreet images.
-		- Remove unused CSS rules. This just adds code bloat, complicates rendering, and app maintenance.
-			- Ref: [Google's Make the Web Faster](https://developers.google.com/speed/docs/best-practices/payload#RemoveUnusedCSS)
-		- Keep selectors simple. CSS parsers work from right to left, which is counter-intuitive. You want selectors to go from course to fine, not fine to course grained.
-			- Ref: [Google Optimize browser rendering](https://developers.google.com/speed/docs/best-practices/rendering#UseEfficientCSSSelectors)
-			- [Need Examples]
-	- JavaScript
-		- Optimize to combine AMD dependent modules
-		- Balance Layer sizes and number of files.
-			- Use a few base layers that contain frequent and common modules
-			- AMD is good at loading multiple modules in parallel.
-			- General guidance is layers <500K, and <6 layers/modules loaded at a time.
-- Cache static resources
-- Provide proper images sizes for target devices. Scaling images is expensive, especially for mobile devices.
+The most simple of suggestions is to reduce the number of files loaded by the app.  This needs to be weighed against the need to have a manageable project structure, and overall size.  Yes, we have seen complex web apps that consist of a single humongous file! Its possible to do, but wildly unmaintainable, and incurs a big hit at startup time. Don't do that.
+
+It is important to make it easy during development by having clean separation of concerns, and clean modular sections of the code. The build and deployment process is where you need to focus on optimizing files for performance. File optimization is discussed in detail in the [Continuous Integration document](./continuous-integration.html).  Suffice to say that from a performance perspective file optimization is the single best contributor to a better performing web app.
+
+### JavaScript
+- Optimize to combine AMD dependent modules
 - Properly optimize all JavaScript and CSS.
 	- This is the single best practice for high performing apps, especially when using Dojo.
 	- Also ensure that any external libraries are pre-optimized and not in source form.
-- Remove unused HTML/JS/CSS/PNG files.
-	- This is just bloat and causes longer build times, more difficult maintenance, and larger deployment size.
+- Balance Layer sizes and number of files.
+	- Use a few base layers that contain frequent and common modules
+	- AMD is good at loading multiple modules in parallel.
+	- General guidance is layers <500K, and <6 layers/modules loaded at a time.
+
+### CSS
+- Optimize CSS to inline `@include` external CSS files
+- Use CSS3 instead of images. Things like gradients, shadows, and rounded corners are faster through CSS than using discreet images.
 - Use CSS3 advance styling in moderation
 	- Rules such as box-shadow are expensive to process
-- Mobile concerns
-	- Keep the DOM small. Instead of hiding `<divs>`, move them into a "domCache" (documentFragment). Then when needed again, move it back into the main DOM.
-	- Minimize the use of Social media buttons, which can add up to a full second in load time PER button
-	- Android hybrid concerns
-		- Move `<uses-sdk>` element to the top of AndroidManifest.xml. (Need reason/ref)
-		- Set `android:anyDensity` to true. (Need reason/ref)
-- References
-	- [Google's Make the Web Faster](https://developers.google.com/speed/?csw=1)
-	- [Mobile App performancee](http://mobile.smashingmagazine.com/2013/04/03/build-fast-loading-mobile-website/)
+- Remove unused CSS rules. This just adds code bloat, complicates rendering, and app maintenance.
+	- Ref: [Google's Make the Web Faster](https://developers.google.com/speed/docs/best-practices/payload#RemoveUnusedCSS)
+	- Keep selectors simple. CSS parsers work from right to left, which is counter-intuitive. You want selectors to go from course to fine, not fine to course grained.
+			- Ref: [Google Optimize browser rendering](https://developers.google.com/speed/docs/best-practices/rendering#UseEfficientCSSSelectors)
+			- [Need Examples]
+
+### Images
+- Use image sprites and CSS image offfsets
+- Use CSS media queries to only load the proper size image for device
+- Provide proper images sizes for target devices. Scaling images is expensive, especially for mobile devices.
+- Consider data-uri in CSS over discreet files for small images like icons.
+- Consider inline SVG images in HTML, or convert SVG to data-uri and put into CSS
+- Font icons can be used instead of small image files and defined using `@font-face` rule in CSS.
+	- [Font Awesome](http://fortawesome.github.io/Font-Awesome/) has a great collection of icons defined this way.
+- Reduce image sizes
+	- Save as best file type for the image. (ie. JPEG for photos, PNG for graphics/screen shots, WebP for anything)
+	- Reduce quality where practical. 75% quality is not useually noticeable, but make large file size reduction.
+	- Ref: [HTML5 Image Compression Article](http://www.html5rocks.com/en/tutorials/speed/img-compression/)
+
+### Network
+- Cache static resources
+- Remove unused HTML/JS/CSS/PNG files.
+	- This is just bloat and causes longer build times, more difficult maintenance, and larger deployment size.
 
 
-<!-- ==========  Link references   ========== -->
-<!-- Keep all links inline.  It will make breaking up docs easier -->
+## Mobile specific concerns
+- Keep the DOM small. Instead of hiding `<divs>`, move them into a "domCache" (documentFragment). Then when needed again, move it back into the main DOM.
+- Minimize the use of Social media buttons, which can add up to a full second in load time PER button
+- Android hybrid concerns
+	- Move `<uses-sdk>` element to the top of AndroidManifest.xml. (Need reason/ref)
+	- Set `android:anyDensity` to true. (Need reason/ref)
 
+## References
+- [Google's Make the Web Faster](https://developers.google.com/speed/?csw=1)
+- [Mobile App performancee](http://mobile.smashingmagazine.com/2013/04/03/build-fast-loading-mobile-website/)
+
+
+<!-- =====[ Keep all links inline.  It will make breaking up docs easier ]===== -->
 
