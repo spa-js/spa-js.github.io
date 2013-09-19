@@ -242,11 +242,15 @@ On some Android devices (most of os version is lower then 4), when tap on an inp
 
 
 ### Double click problem on Android 4.2 (jQuery mobile 1.3.1 + iScroll4)
-Since Android 4.2 changed it's default WebView core, the event handler is not the same as previous Android version. On Android 4.2, when you tap on an item, it will trigger 'tap' and 'click' event on the same element, when the 'tap' event bubbling to iScroll, iScroll will trigger the 'click' event. However, on Android 2.3, it seems only 'tap' event occurs on the element bubbling to iScroll. Not quite sure what jQueryMobile/iScroll did to prevent the 'click' event. When iScroll capture the 'click' event, it will dispatch again and then element will capture the 'click' event to expend/close items.
-To fix this problem, we can do as below: (the change code includes in the test app)
-1. update jquery to 1.9.1 and jQueryMobile to 1.3.2.
-2. set iScroll handleClick option to true (we need iScroll to dispatch event on low version Android, the change code in myiscroll.js)
-3. stop 'tap' event bubbling for Android 4.2, by this the 'tap' event not occurs on the element and not dispatch to iScroll, so iScroll not dispatch 'click' event. In the meanwhile, the element will get 'click' event on itself, so it can do the action successful. (Check the code in demoS4.js. When application initialization ok. we can check the device version and bind jquery event on the elements which includes in iScroll and stop propagation for 'tap' event).
+Since Android 4.2 changed it's default WebView core, the event handler is not the same as previous Android version. On Android 4.2, when you tap on an item, it will trigger 'tap' and 'click' event on the same element, when the 'tap' event bubbling to iScroll, iScroll will trigger the 'click' event. However, on Android 2.3, it seems only 'tap' event occurs on the element bubbling to iScroll. Not quite sure what jQueryMobile/iScroll did to prevent the 'click' event. When iScroll captures the 'click' event, it will dispatch again and then element will capture the 'click' event to expend/close items.
+
+To fix this problem, we can do the following: (the change code includes in the test app)
+
+1. Update jquery to 1.9.1 and jQueryMobile to 1.3.2.
+2. Set iScroll handleClick option to true (we need iScroll to dispatch event on low version Android, the change code in myiscroll.js)
+3. Stop 'tap' event bubbling for Android 4.2, by this the 'tap' event not occurs on the element and not dispatch to iScroll, so iScroll not dispatch 'click' event. In the meanwhile, the element will get 'click' event on itself, so it can do the action successfully. 
+
+   (Check the code in demoS4.js. When application initialization is ok, we can check the device version and bind jQuery event on the elements which includes in iScroll and stop propagation for 'tap' event).
 
 Please refer to the sample code for more details in the attachment.
 
