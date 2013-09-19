@@ -107,9 +107,9 @@ JavaScript Coding guidelines
 	- It should also improve the maintainability of the code itself by actually clearly showing what the actual conditions are, just once, for a given action.
 	- Example: Consider checking against the resource bundle text definition rather than one of two text translations. e.g. This is brittle coding:
 
-		```
+`
 	if (acct.description.match(/^LINE OF CREDIT.*/) || acct.description.match(/^LIGNE DE CREDIT.*/)) {
-		```
+`
 
 - MUST Do not leave trailing commas in your code.  For example:
 	- Incorrect: `{a : 1, b : 2,}`
@@ -160,12 +160,12 @@ Dojo Coding guidelines
 			- `window`, `document`, and `document.body` global variables, or equivalent variables for the frame that you want to operate on.
 			- If you need to operate on a different frame/document, all of the modern dojo DOM related methods either take a document parameter or a DOMNode parameter (which implies a document). For example:
 
-			```
+`
 	require(["dojo/dom", "dojo/dom-geometry"], function(dom, domGeom){
 	    var node = dom.byId("address", myDocument);
 	    domGeom.setMarginBox(node, ...);
 	});
-			```
+`
 
 		- The following `dojo/_base/window` functions are DEPRECATED
 
