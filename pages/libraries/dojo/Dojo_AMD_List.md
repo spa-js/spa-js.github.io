@@ -8,7 +8,7 @@ category: bp
 Dojo 1.9 AMD loader cheat sheet:
 --------------------------------
 Taken from: [https:|docs.google.com/spreadsheet/ccc?key=0Au0BMjQuiAdJdExGTkpEaXR0M3Y2bzVBTnBpblhidXc&authkey=CM3l1r4N&hl=fr#gid=0](https:|docs.google.com/spreadsheet/ccc?key=0Au0BMjQuiAdJdExGTkpEaXR0M3Y2bzVBTnBpblhidXc&authkey=CM3l1r4N&hl=fr#gid=0)
-
+`
 | =============================================================================================
 | function                     | requires                     use instead
 | ==============================================================================================
@@ -169,3 +169,4 @@ Taken from: [https:|docs.google.com/spreadsheet/ccc?key=0Au0BMjQuiAdJdExGTkpEaXR
 | "dojo/i18n!{pkg}/nls/{class}"   Read in nls text. Set local var to "i18n"
 |
 |
+`
