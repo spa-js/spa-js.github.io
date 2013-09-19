@@ -4,8 +4,6 @@ title: Performance
 category: bp
 ---
 
-
-
 # Performance
 
 ## Introduction
