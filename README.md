@@ -14,7 +14,7 @@ Create markdown or liquid file in directory `_posts/`
     _posts/2013-08-05-hello-world.md
 
 ## Preview locally with baseurl
-    jekyll serve --watch --baseurl ''
+    jekyll serve --watch
     open http://localhost:4000/
 
 ## Collaborate, Issues, Contribute
