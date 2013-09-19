@@ -48,7 +48,7 @@ It is important to make it easy during development by having clean separation of
 - Balance Layer sizes and number of files.
 	- Use a few base layers that contain frequent and common modules
 	- AMD is good at loading multiple modules in parallel.
-	- General guidance is layers <500K, and <6 layers/modules loaded at a time.
+	- General guidance is layers &lt;500K, and &lt;6 layers/modules loaded at a time.
 
 ### CSS
 - Optimize CSS to inline `@include` external CSS files
@@ -59,7 +59,7 @@ It is important to make it easy during development by having clean separation of
 	- Ref: [Google's Make the Web Faster](https://developers.google.com/speed/docs/best-practices/payload#RemoveUnusedCSS)
 	- Keep selectors simple. CSS parsers work from right to left, which is counter-intuitive. You want selectors to go from course to fine, not fine to course grained.
 			- Ref: [Google Optimize browser rendering](https://developers.google.com/speed/docs/best-practices/rendering#UseEfficientCSSSelectors)
-			- [Need Examples]
+			- (Need Examples)
 
 ### Images
 - Use image sprites and CSS image offfsets
