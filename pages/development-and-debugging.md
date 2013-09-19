@@ -1,3 +1,9 @@
+---
+layout: default
+title: Development and Debugging
+category: bp
+---
+
 # Development and Debugging
 
 ## Introduction

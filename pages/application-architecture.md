@@ -1,3 +1,9 @@
+---
+layout: default
+title: Application Architecture
+category: bp
+---
+
 # Application Architecture
 
 ## Introduction

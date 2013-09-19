@@ -1,7 +1,15 @@
+---
+layout: default
+title: Worklight
+category: bp
+---
+
+
 # Worklight
 
 ## Introduction
 I know we don't want Worklight specific guidance here, but I wanted a place to put notes, tips, etc for now.
+
 
 
 ## Source Code ignore list

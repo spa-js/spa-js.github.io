@@ -1,3 +1,10 @@
+---
+layout: default
+title: Dojo AMD List
+category: bp
+---
+
+
 Dojo 1.9 AMD loader cheat sheet:
 --------------------------------
 Taken from: [https:|docs.google.com/spreadsheet/ccc?key=0Au0BMjQuiAdJdExGTkpEaXR0M3Y2bzVBTnBpblhidXc&authkey=CM3l1r4N&hl=fr#gid=0](https:|docs.google.com/spreadsheet/ccc?key=0Au0BMjQuiAdJdExGTkpEaXR0M3Y2bzVBTnBpblhidXc&authkey=CM3l1r4N&hl=fr#gid=0)

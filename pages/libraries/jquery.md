@@ -1,3 +1,9 @@
+---
+layout: default
+title: JQuery
+category: bp
+---
+
 # JQuery
 
 ## Introduction

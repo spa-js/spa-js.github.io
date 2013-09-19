@@ -1,3 +1,9 @@
+---
+layout: default
+title: Continuous Integration
+category: bp
+---
+
 # Continuous Integration
 
 ## Introduction

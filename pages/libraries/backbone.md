@@ -1,3 +1,8 @@
+---
+layout: default
+title: Libraries - BackboneJS
+category: bp
+---
 # BackboneJS
 
 ## Introduction
