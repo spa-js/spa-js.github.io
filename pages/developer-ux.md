@@ -67,14 +67,23 @@ try to embed best practices that they them selfs learned over time and want to h
 Some templates cover basic web apps like putting html, css, and js together to more complex project like
 dojo builds with integration into hybrid Apps.
 
-[Yeoman] is a
+### [Yeoman](http://yeoman.io)
 
 
 ## Code Editing
 
+### Editor Config
+### Autocompletation
+### Editor Plugins
+### Integrated Development Enviroments (IDE)
+
 ## Dependencies
 
+### Bower (http://bower.io)
+
 ## Automation
+
+### GruntJS (http://gruntjs.com)
 
 ### Minified/ Compress
 
