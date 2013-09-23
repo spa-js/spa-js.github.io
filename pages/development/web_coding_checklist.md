@@ -5,16 +5,16 @@ category: productivity
 tags: [development, lifecycle]
 ---
 
-Security
---------
+## Security
+
 - MUST review all use of eval().
 	- Eval'd expression must be from trusted source to avoid security vulnerabilities.
 - MUST ensure no hard coded usernames or passwords in client processed code.
 - MUST ensure no passwords are persisted in localStorage/sessionStoreage/Cookies
 - SHOULD ensure no usernames are persisted in localStorage/sessionStoreage/Cookies
 
-File names
-----------
+## File names
+
 - SHOULD Directory names are lowercase
 - SHOULD Instantiateable Class are ProperCase with leading Capital letter
 - SHOULD Singleton classes are camelCase with leading letter
@@ -22,8 +22,8 @@ File names
 	- Numbers ok, after first character
 	- Do not use spaces, underscores, or hyphens
 
-Dijit Templates
---------------
+## Dijit Templates
+
 - MUST use data-dojo-type rather than dojoType
 - MUST use data-dojo-attach-point rather than dojoAttachPoint
 - MUST use data-dojo-attach-event rather than dojoAttachEvent
@@ -36,9 +36,8 @@ Dijit Templates
 	- SHOULD Use dap* prefix for data-dojo-attach-point in HTML templates
 - SHOULD Use AMD module ID notation (eg `foor/Bar`) notation, not dot-notation (`a.b.c`)
 
+## HTML main files
 
-HTML main files
----------------
 - MUST Use HTML5 document preamble in master documents (ie `<!DOCTYPE html>`)
 - MUST Use AMD `require()` to load built layer files and scripts (including WL scripts), rather than `<script>` tags
 - MUST Don't bind to the DOM Level 0 "onload" attribute, instead, use `dojo/domReady!` AMD loader plugin and `require()`
@@ -47,8 +46,8 @@ HTML main files
 - SHOULD Do not use `type="text/javascript"` in `<script>` tags for HTML5 documents
 
 
-JavaScript Coding guidelines
-----------------------------
+## JavaScript Coding guidelines
+
 - SHOULD Use JSHint on modules to check for common errors. Recommended options:
 	- asi : false,
 	- bitwise : false,
@@ -123,8 +122,8 @@ JavaScript Coding guidelines
 	- Constants are all uppercase `var PI = 3.14159;`
 
 
-AMD Coding guidelines
----------------------
+## AMD Coding guidelines
+
 - MUST Do not add modules to the callback argument list that are not directly referenced within that module's definition
 - MUST Do not repeat module identifiers in your define function. For example:
 	- Incorrect: `define(["app/widget",..,"app/widget"],function(Widget,...,Widget){...});`
@@ -136,8 +135,8 @@ AMD Coding guidelines
 	- Modules not directly referenced in callback function should be listed last, with a descriptive comment (ie `The following modules are used by the template`)
 - SHOULD Use standard callback arg names for dojo modules.  See [Dojo AMD List.txt](./Dojo_AMD_List.txt) for standard module to callback arg name map.
 
-Dojo Coding guidelines
-----------------------
+## Dojo Coding guidelines
+
 - SHOULD Code follows [Dojo style guide](http://dojotoolkit.org/community/styleGuide)
 - SHOULD Do not use legacy or deprecated modules in application modules
 	- Note: it is ok for these to be in Dojo Toolkit's modules

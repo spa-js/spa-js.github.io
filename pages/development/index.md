@@ -77,18 +77,8 @@ dojo builds with integration into hybrid Apps.
 ### Editor Plugins
 ### Integrated Development Enviroments (IDE)
 
-## Dependencies
-
-### Bower (http://bower.io)
-
-## Automation
-
-### GruntJS (http://gruntjs.com)
-
-### Minified/ Compress
-
-### Builds
-
+## [Web Coding Checklist](./web_coding_checklist.html)
+]
 
 
 <!-- =====[ Keep all links inline.  It will make breaking up docs easier ]===== -->

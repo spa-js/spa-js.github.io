@@ -20,23 +20,11 @@ Total time is the same, but user perception of “Click > Transition > Fill” i
 - Busy indicator can actually lead to worse “perceived” user experience than simply working in silence – for short periods only of course, in the range of a 1-2 seconds maximum.
 
 
-## IOS
+## [IOS](./ios.html)
 
-- Disabled AutoCorrect and AutoCapitalize:
-	- ref: [TriceDesigns Mobile/Phonegap tips](http://www.tricedesigns.com/2012/01/17/mobile-web-phonegap-html-dev-tips/)
+## [Android](./android.html)
 
-	<input type="text" autocorrect="off" autocapitalize="on" />
+## [Cordova](./cordova.html)
 
-
-## Android
-- Emulation using [Genymotion](http://www.genymotion.com/)
-
-
-
-## PhoneGap
-- [PhoneGap Command Line](http://log.michaelbrooks.ca/post/phonegap-cli-preview)
-
-
-<!-- =====[ Keep all links inline.  It will make breaking up docs easier ]===== -->
-
+## [Worklight](./worklight.html)
 
