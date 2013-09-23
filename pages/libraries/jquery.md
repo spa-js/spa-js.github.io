@@ -248,7 +248,7 @@ To fix this problem, we can do the following: (the change code includes in the t
 
 1. Update jquery to 1.9.1 and jQueryMobile to 1.3.2.
 2. Set iScroll handleClick option to true (we need iScroll to dispatch event on low version Android, the change code in myiscroll.js)
-3. Stop 'tap' event bubbling for Android 4.2, by this the 'tap' event not occurs on the element and not dispatch to iScroll, so iScroll not dispatch 'click' event. In the meanwhile, the element will get 'click' event on itself, so it can do the action successfully. 
+3. Stop 'tap' event bubbling for Android 4.2, by this the 'tap' event not occurs on the element and not dispatch to iScroll, so iScroll not dispatch 'click' event. In the meanwhile, the element will get 'click' event on itself, so it can do the action successfully.
 
    (Check the code in demoS4.js. When application initialization is ok, we can check the device version and bind jQuery event on the elements which includes in iScroll and stop propagation for 'tap' event).
 
@@ -272,4 +272,18 @@ Do not forget to refresh all the button group after this:
 
     $('#radioButtonGroup input[type=radio]').checkboxradio('refresh');
 
+
+## Reference Links
+
+- [Is jQuery The Best Option For Large-Scale App Development?](http://addyosmani.com/blog/is-jquery-the-best-option-for-large-scale-app-development/)
+- [jquery-week-calendar/weekcalendar_json.html at master · themouette/jquery-week-calendar](https://github.com/themouette/jquery-week-calendar/blob/master/weekcalendar_json.html)
+- [jQuery Learning Center](http://learn.jquery.com/?utm_source=javascriptweekly&utm_medium=email)
+- [IgniteUI Controls - Samples of IgniteUI Controls - IgniteUI Featured Controls](http://www.infragistics.com/products/jquery/samples)
+- [Slide in menu for mobile webkit](http://cubiq.org/dropbox/sim/)
+- [Rotating wheel for your iPhone webapps](http://cubiq.org/rotating-wheel-for-your-iphone-webapps)
+- [Spinning wheel on webkit for iPhone/iPod touch](http://cubiq.org/spinning-wheel-on-webkit-for-iphone-ipod-touch)
+- [On jQuery &amp; Large Applications - rmurphey](http://blog.rebeccamurphey.com/on-jquery-large-applications)
+- [jQuery File Upload Demo](http://aquantum-demo.appspot.com/file-upload#requirements)
+- [16 jQuery Menus with Beautiful Animations for Developers | DJDESIGNERLAB](http://djdesignerlab.com/2011/07/08/16-jquery-menus-with-beautiful-animations-for-developers/)
+- [advanced-jquery-boilerplate/advanced-jquery-boilerplate.js at master · elclanrs/advanced-jquery-boilerplate](https://github.com/elclanrs/advanced-jquery-boilerplate/blob/master/advanced-jquery-boilerplate.js)
 
