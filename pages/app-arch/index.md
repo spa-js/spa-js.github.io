@@ -15,9 +15,9 @@ This document details the best practices when designing modern desktop and mobil
 In this section we will break down the various areas of the client tier and describe the importance of each area, and how to utilize each to ensure a high quality and performant solution.
 
 
-## [O/S and Cordova Bridge](./os-cordova-html)
+## [O/S and Cordova Bridge](./os-cordova.html)
 
-## [Browser Runtime](browser.html)
+## [Browser Runtime](./browser.html)
 
 ## [Shims and Polyfills](./shims.html)
 
