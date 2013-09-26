@@ -130,6 +130,13 @@ category: bp
 
 - [deanmao/node-chimera](https://github.com/deanmao/node-chimera)
 - [PhantomJS: Headless WebKit with JavaScript API](http://phantomjs.org/)
+- [The Intern](http://theintern.io/)
+- [SinonJS](http://sinonjs.org/)
+- [BusterJS](http://docs.busterjs.org/en/latest)
+- [CasperJS](http://casperjs.org/)
+- [TravisCI](https://travis-ci.org/)
+- [SouceLabs](https://saucelabs.com/)
+- [Appimum](http://appium.io/)
 
 ### Code Editing
 
