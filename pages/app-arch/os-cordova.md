@@ -8,7 +8,7 @@ category: bp, app-arch
 
 ## Introduction
 
-![SPA layered environment](./images/app-arch-layers.png)
+![SPA layered environment](./images/app-arch-os.png)
 
 
 ## O/S and Cordova Bridge
