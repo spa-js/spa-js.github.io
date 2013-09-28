@@ -16,8 +16,7 @@ In this section we will break down the various areas of the client tier and desc
 
 - [O/S and Cordova Bridge](./os-cordova.html)
 - [Browser Runtime](./browser.html)
-- [Shims and Polyfills](./shims.html)
-- [Toolkits and Libraries](./toolkits.html)
+- [Toolkits, Shims and Polyfills, Libraries](./toolkits.html)
 - [Application Foundation](./app-foundation.html)
 - [Views](./views.html)
 - [Business Components](./business-components.html)

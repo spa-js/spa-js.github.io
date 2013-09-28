@@ -38,3 +38,8 @@ category: bp
 
 ### Sauce Labs
 [Sauce Labs](https://saucelabs.com/)
+
+
+### Image Optimization
+
+- [Tools for image optimization](http://addyosmani.com/blog/image-optimization-tools/) - Here's a great read that includes an awesome list of tools for optimizing images as part of a CI process.

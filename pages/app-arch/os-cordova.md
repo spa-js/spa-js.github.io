@@ -6,12 +6,8 @@ category: bp, app-arch
 
 # O/S and Cordova Bridge
 
-## Introduction
-
 ![SPA layered environment](./images/app-arch-os.png)
 
-
-## O/S and Cordova Bridge
 Typically you will have little to no control the operating system your app is running upon. For desktop apps, this is rarely a concern. But today's "mobile-first" approach to application design and runtime operation, the O/S becomes central to how the app looks and behaves, and interaction with the hardware itself.
 
 Mobile applications frequently mimic the operating system's look and feel. Also known as its theme, it relies on provided style guidelines to achieve a consistent user experience. Other aspects of O/S specific behavior is the existence of a back button, options access, and if the app can be safely placed into the background. Various toolkits, such as Dojox/Mobile, can provide the desired theming, and assist with application navigation and menuing behavior.

@@ -6,8 +6,6 @@ category: bp, app-arch
 
 # Shims and Polyfills
 
-## Introduction
-
 
 ![SPA layered environment](./images/app-arch-layers.png)
 

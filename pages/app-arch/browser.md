@@ -1,13 +1,10 @@
 ---
 layout: default
-title: Browsers
+title: Browser Runtime
 category: bp, app-arch
 ---
 
-# Application Architecture
-
-## Introduction
-
+# Browser Runtime
 
 ![SPA layered environment ](./images/app-arch-browser.png)
 
