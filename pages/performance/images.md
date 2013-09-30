@@ -17,7 +17,10 @@ category: bp
 	- Save as best file type for the image. (ie. JPEG for photos, PNG for graphics/screen shots, WebP for anything)
 	- Reduce quality where practical. 75% quality is not useually noticeable, but make large file size reduction.
 	- Ref: [HTML5 Image Compression Article](http://www.html5rocks.com/en/tutorials/speed/img-compression/)
-
+- Scan for and remove unused images
+	- Image directories are like a junk drawer. Things start to accumulate and rarely get cleaned up.
+	- For each image file, scan for its use within the code base, and if its not being referenced, remove it from the project.
+	- For mobile projects, this is even more important. Unused images can add considerable bloat to deployed package sizes.
 
 
 ## References

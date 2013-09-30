@@ -8,7 +8,11 @@ category: bp
 
 ## Dependencies
 
+### NPM
+Node Package Manager (NPM), which is part of NodeJS, provides a clean and organized way to publish application modules that have fixed dependencies.
+
 ### Bower (http://bower.io)
+
 
 ## Automation
 
@@ -29,15 +33,16 @@ category: bp
 ### Selenium
 [Selenium](https://code.google.com/p/selenium/wiki/Grid2)
 
+## Cloud Testing
+
 ### Sauce Labs
 [Sauce Labs](https://saucelabs.com/) is a cloud based test environment for desktop and mobile browsers
 
+### Heroku
+[Heroku](https://www.heroku.com/) is a cloud based testing environment that integrates with GitHub and supports many common server side languages.
 
 ### Travis CI
 [Travis CI](http://about.travis-ci.org/) is a hosted continuous integration service for the open source community.
-
-### Sauce Labs
-[Sauce Labs](https://saucelabs.com/)
 
 
 ### Image Optimization
