@@ -6,7 +6,8 @@ category: bp
 # Dojo Toolkit
 
 ## Introduction
-Add some preamble for Dojo here.
+
+The [Dojot Toolkit](http://www.dojotoolkit.org) takes a radically different approach to being a toolkit. It makes everything available at once in its base package. There are hundreds of modules that span everything from basic APIs, widgets, mobile, animations, charting, graphing, and much more. The Dojo foundation manages all the components, so there is consistent quality, API signature, and licensing. The down side is that Dojo incurs a comparatively steep learning curve compared to JQ.
 
 ## Child Pages
 - [Dojo AMD List](./dojo/Dojo_AMD_List.html)

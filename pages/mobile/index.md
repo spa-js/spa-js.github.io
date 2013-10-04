@@ -20,11 +20,8 @@ Total time is the same, but user perception of “Click > Transition > Fill” i
 - Busy indicator can actually lead to worse “perceived” user experience than simply working in silence – for short periods only of course, in the range of a 1-2 seconds maximum.
 
 
-## [IOS](./ios.html)
-
-## [Android](./android.html)
-
-## [Cordova](./cordova.html)
-
-## [Worklight](./worklight.html)
+- [IOS](./ios.html)
+- [Android](./android.html)
+- [Cordova](./cordova.html)
+- [Worklight](./worklight.html)
 

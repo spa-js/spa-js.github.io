@@ -28,6 +28,20 @@ Flexbox is a revolution in clean CSS based layout. Yes, I'm talking to all of yo
 - [A showcase of traditionally hard CSS problems, easily solved using flexbox](http://philipwalton.github.com/solved-by-flexbox)
 
 
+## Using CSS Preprocessors
+
+Preprocessors extend the standard CSS language with custom logic and variables. This enables you to define a cusotm color set and use variables throughout your CSS files to use those colors. For large and complex projects, this can be very advantageous.
+
+There are several popular preprocessors implementations:
+- [Sass](http://sass-lang.com/)
+- [LESS](http://lesscss.org/)
+- [Stylus](http://learnboost.github.io/stylus/)
+
+The big concern when using preprocessors is that you must implement a new build process to manage them. Most allow for runtime processing which performs the conversion on the fly and is valuable during development. But, this is an anti-pattern post-development, as it has a negative impact on startup time.
+
+### Resources:
+[CSS Processors compared](http://abhisharma.co.in/#sassvsless)
+
 
 
 

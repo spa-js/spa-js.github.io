@@ -7,8 +7,17 @@ category: bp
 # JQuery
 
 ## Introduction
-Add some preamble for JQuery here.
-Taken from IBM internal wiki entry by [Zhang Xiaoming](mailto:zhangzxm@cn.ibm.com)
+
+### [JQuery](http://jquery.com/)
+JQuery is by far the most popular general purpose toolkit for web sites. At its core is a fast DOM query mechanism to access and manipulate elements. It also provides a consistent AJAX API, simple effects, and event handling. There are several extensions to JQuery that provide extra features, such as:
+
+- [JQuery UI](http://jqueryui.com/)
+- [JQuery Mobile](http://jquerymobile.com/)
+- [Several hundred](http://plugins.jquery.com/) community sourced plug-ins
+
+Jquery's strengths are its ubiquity, ase of learning, documentation, and strong community. It comes up short on large projects, as scalability and maintenance can be an issue. Other areas of concern include potential copyright, licensing, and API inconsistency across its plugins.
+
+The following information is taken from IBM internal wiki entry by [Zhang Xiaoming](mailto:zhangzxm@cn.ibm.com)
 
 ## Clean coding
 

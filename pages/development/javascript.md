@@ -10,7 +10,9 @@ category: bp
 
 ## Introduction
 
-JavaScript is a powerful language, but care should be taken to write good clean code. Since JS is loosely typed, which enables variables to be easily coerced into different types. Its far too easy to inadvertantly convert a string to a number, or worse a NaN (Not a number!).
+> Just because JavaScript permits sloppy programming, it is not a license to exploit such poor practice.
+
+JavaScript is a powerful language, but care should be taken to write good clean code. Since JS is loosely typed, which enables variables to be easily coerced into different types. Its far too easy to inadvertently convert a string to a number, or worse a NaN (Not a number!).
 
 ```
 	var s = "Hello World";
@@ -33,8 +35,49 @@ Instead of removing a substring using the above syntax is valid in some language
 - Use shortcuts for default value assignment
 	- Use `||` during assignment operations to allow for default values
 		- `args = args || {}` - This ensures we can work on an expected input object
-		- `var greeting = args.greeting || "Good day";
+		- `var greeting = args.greeting || "Good day";`
 
+- Put braces on the right of block definitions.
+	- This is not a personal style choice. Its simply safer to do this in JavaScript.
+	- Good:
+```js
+		return {
+			ok : true;
+		};
+```
+	- Bad:
+```js
+		return          // returns undefined, not the expected object!
+		{				// This block is valid, but no-ops!
+			ok : false;
+		};
+```
+	- Taken from a [Talk by Doug Crawford](https://www.youtube.com/watch?feature=player_embedded&v=_EANG8ZZbRs#t=1105)
+
+- Never leave dangling commas in lists and object definitions
+	- It used to cause IE to throw errors.
+	- All browsers allow it, but its sloppy programming
+
+- Always, Always use semi-colons.
+	- Yes, JavaScript will do a best guess on end of lines
+	- But, it does not always infer the programmers intention.
+	- So don't guess how it will be interpreted by the compiler
+
+- Avoid global variables
+	- Always use the `var` statement to define local variables
+	- Otherwise the variable is placed into the global scope, which is _almost_ always bad
+	- Using AMD based loaders, eliminates globally name spaced packages/modules.
+	- Does not apply browser provided globals such as: `window`, `navigator`, `document`, `console`, etc.
+
+- Define all local `var`'s at the top of each function
+	- This is not **required**, but leads to cleaner code and show intent by the programmer
+	- Random `var` definitions throughout a function are sloppy and can lead to errors, such as unintented variable re-assignment.
+	- Local variables are at `function` scope, meaning they are accessible anywhere within the enclosing function, not just within enclosing `{ ... }` blocks.
+	- This applies to `for( var i in ...) { ... }` blocks as well.  `i` is not scoped to the for block, but its outer containing function.  This is just such a common practice in most other languages, that people expect this to be the case in JavaScript too. Its not.
+
+- Read the [JSLint documentation](http://www.jslint.com/lint.html)
+	- Then re-read it until you understand and accept (almost) all the rules defined.
+	- You **will** be a better JavaScript programmer afterwards.
 
 
 ## Truth and Truthyness
