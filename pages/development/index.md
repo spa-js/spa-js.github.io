@@ -33,43 +33,45 @@ Writing clean and maintainable code should be a priority for every developer. Sl
 	- This will keep you safe
 	- Use shim toolkits to bolster older browsers.
 
-
-## Linting
-
-- [JSLint](http://jslint.com/) - The grandfather of JavaScript lint tools by Doug Crockford. Read the instructions. Please.
-- [JSHint](http://jshint.com/) - A popular fork of the original JSLint.
-- [ESHint](https://github.com/nzakas/eslint) - A command line JS linter that enables a plugable list of tests. It shows promise as its more flexible than JSHint
-- [JSONLint](http://jsonlint.com/)jshint.com
-
 See the [Web Coding Checklist](./web_coding_checklist.html) for general guidance on code reviews.
-
-
-## Scaffolding
-Scaffolding is a good way to get started with a new development project.
-It provides a template and some times prompts the user to be able customized the template.
-Some project provides templates for different stages of development from unit testing to mobile development.
-When getting started with a new technology or framework is sometimes difficult to users look for a fast way
-to get a basic "Hello World" project created.
-These scaffolding templates are usually created in the open collaboration by experts on the technology and
-try to embed best practices that they them selfs learned over time and want to help others not make again.
-
-Some templates cover basic web apps like putting html, css, and js together to more complex project like
-dojo builds with integration into hybrid Apps.
-
-### [Yeoman](http://yeoman.io)
 
 
 ## Code Editing
 
+Using a proper editor will greatly improve your efficiency as a developer. It really doesn't matter if you use a fully integrated development environment (IDE), or a simple text editor and command line tools for building and deploying. The trend seems to be moving in favor of normal text editors and open source command line tools as a development environment, as this can allow developers to focus on the task of actual coding without the distractions, slow editing, and learning curve inherent in most IDE's.
+
+Using command line tooling for build, test and deployment, goes right in hand with continuous integration. If the developers are using the exact same process flow as the CI automation, then issues can be identified much earlier.
 
 
-### Editor Config
-### Autocompletation
-### Editor Plugins
-### Integrated Development Enviroments (IDE)
+## Source Code Control
 
-## [Web Coding Checklist](./web_coding_checklist.html)
-]
+This is a must in terms of project management, backup and, and team development.  There are many options, but ensure that you use an SCCS for all development.  The only recommended practice is, don't deliver any changes unless it has been properly unit tested. There is nothing worse than pulling in new changes form another developer that breaks the build or kills the app. Some shops go so far as public humiliation of sloppy and uncaring developers that cause other this sort of pain. A "hat of shame" that must be worn by the scorned can work wonders to dissuade this sort of behavior.
+
+## Project Structure
+
+Some projects types, such as IBM Worklight, have a fixed project structure. Within that structure there may be company or personal conventions to define where assets are located. Contained below are generally accepts de-facto conventions that should be followed.
+
+### Directory and File names
+- Directory names should be lowercase
+- Module naming
+	- Instantiateable Class are ProperCase with leading Capital letter
+	- Singleton classes are camelCase with leading letter
+	- All other files should generally be camelCase, with well defined extensions.
+- Use only standard letters in directory and file names.
+	- Numbers are ok, after first character, but should generally be avoided unless there is a valid reason.
+	- Do not embed version numbers in source file names. There is never a valid reason to do this.
+	- Do not use spaces, underscores, or hyphens
+
+### Other considerations
+- Custom application code and modules should be located in an `/app` directory
+- CSS and image files should be located into a common `/theme` or `/css` directory
+	- This makes management and optimzation of image artifacts much easier than having them spread around the app.
+	- The possible exception is for images that are tightly associated with given widget, or content.
+- 3rd party libraries should be located into a `lib` or `resources` directory
+	- Also, note that these should NOT be checked into source control. Use a package manager to ensure that all developers and CI flows are using consistent versions of libraries.
+- Always use relative based path names for everything.
+	- Always be aware of developer/CI operating system differences.
+	- Do not define fixed fully qualified directory names in any code or configurations. `C:\dev\libs` does not do a Linux or OSX based developer any good.
 
 
 <!-- =====[ Keep all links inline.  It will make breaking up docs easier ]===== -->

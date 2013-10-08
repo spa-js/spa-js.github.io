@@ -12,6 +12,166 @@ The [Dojot Toolkit](http://www.dojotoolkit.org) takes a radically different appr
 ## Child Pages
 - [Dojo AMD List](./dojo/Dojo_AMD_List.html)
 
+
+## Dojo Coding Guidelines
+
+- Code modules following the [Dojo style guide](http://dojotoolkit.org/community/styleGuide)
+- Use `data-dojo-config` rather than `djConfig` attribute on dojo `<script>` element.
+
+- Do not use global variables (objects) in application modules
+	- With modern AMD code, hopefully globals are completely unnecessary.
+	- If you do need to create/read a global, then the following pattern is preferred:
+
+	```JS
+		require([...], function(...){
+			var global = this;
+			...
+			global.myVariable = "hello world";
+		});
+	```
+
+	- For strict modules, there's a slightly more complicated syntax:
+
+	```Javacript
+		"use strict";
+		require([...], function(...){
+			var global = function("return this")();
+			...
+			global.myVariable = "hello world";
+		});
+	```
+
+- Scan code for the following global variables. Do not use global reference, instead use AMD define() args
+	- `dojo.`
+	- `dijit.`
+	- `dojox.`
+	- Any other potential globals used by your application, such as `app.`
+
+	- Note: In Dojo 1.8, you may see Dojo's "declare" function used with three or four arguments, with the first argument being a string which is the global path to the name of the class.  The string ClassName is for legacy compatibility with pre-Dojo1.7 code and in application code based on AMD can be removed. Example:
+
+	```JavaScript
+		var myClass = declare("a.b.c.ClassName",[BaseClass, Mixin1, Mixin2, ...],{
+			//properties and methods map
+		});
+	```
+
+	- instead use:
+
+	```JavaScript
+		var myClass = declare(BaseClass,[Mixin1, Mixin2],{
+			//properties and methods map
+		});
+	```
+
+- Dojo uses a custom format for [API documentation](http://dojotoolkit.org/reference-guide/1.7/util/doctools/markup.html)
+
+### Publish and Subscribe Topic naming consistency & maintainability
+- All topic names strings used in `topic.publish()` and `topic.subscribe()` should be defined in either a:
+	- Common `app.js` within `topics` map, that is used by all other modules
+		- Access `app.js` via AMD dependency list.
+	- Dedicated "topics" module
+- Scan code for `publish(` and `subscribe(` and ensure that the topic name is defined using `app.topics.MY_TOPIC` topic map names rather than hard-coded strings.
+
+
+## Deprecated Dojo Modules
+Do not use legacy or deprecated modules in application modules
+	- Note: it is ok for these to be in Dojo Toolkit's modules
+
+Scan code for the following deprecated modules:
+
+- `dojo/_base/connect` : Replace with:
+	-  `dojo/on` : Node event handler
+	-  `dojo/aspect` : Function before, after, around calls
+	-  `dojo/topic` : Loosely coupled event pub/sub notifications
+
+- `dojo/_base/xhr` : Replace by `dojo/request`
+
+- `dojo` : Instead of using the dojo module, use dependencies on specific smaller modules.
+
+- `dojo/_base/kernel` : Avoid using this module which has large dependency chain. This module us not usually required directly by end developers, unless required for:
+	- Creating additional modules that are part of the dojo toolkit.
+	- An exception to the rule: Ok to use for `kernel.deprecated();`
+
+- `dojo/_base/window` : Originally written to serve two main purposes:
+	- Provide methods/variables to access the current document and the `<body>` element of the current document.
+	- Provide functions to switch the *current document*, i.e. the document accessed by the methods/variables mentioned above, and indirectly by DOM methods where the document isn't implied by the arguments, for example `dojo.byId("xyz")`.
+	- In modern code, you can usually forgo use of this module, and instead use:
+		- `window`, `document`, and `document.body` global variables, or equivalent variables for the frame that you want to operate on.
+		- If you need to operate on a different frame/document, all of the modern dojo DOM related methods either take a document parameter or a DOMNode parameter (which implies a document). For example:
+
+	```JS
+	require(["dojo/dom", "dojo/dom-geometry"], function(dom, domGeom){
+	    var node = dom.byId("address", myDocument);
+	    domGeom.setMarginBox(node, ...);
+	});
+	```
+
+	- The following `dojo/_base/window` functions are DEPRECATED
+		- `dojo.doc` : The old `dojo.doc` variable is accessible through `dojo/_base/window::doc`, but usually you can (and should) just access the `document` global variable to get a pointer to the document.
+			-  For functions that operate on a DOMNode, you can get the document via `node.ownerDocument`.
+		- `win.body()`
+		- `win.global()`
+		- `win.withDoc()`
+		- `win.withGlobal()`
+
+- `dojo/_base/Deferred` : Replace by `dojo/Deferred`
+
+- `dojo/_base/sniff` : Replace by dojo/sniff
+
+- `dojo/DeferredList` : Replace with dojo/promise/all and dojo/promise/first
+
+- `dijit/hccss` : Replace with dojo/hccss
+
+- `dojo/io/iframe` : Replace with dojo/request/iframe
+
+- `dojo/io/script` : Replace with dojo/request/script
+
+- `dojo/ready` : (1.9) Use `dojo/domReady!` AMD loader plugin instead.
+	- The only caveat is that if you are using the parser and have custom javascript code to run, you should run the parser manually rather than setting `parseOnLoad:true`.
+
+- `dojox/mobile/sniff` : (1.9) Replace with `dojo/sniff`
+
+- `has("iphone")` : (1.9) replaced with `has("ios")` to detect iOS device.  In future, `has("iphone")` will just be for phone.
+
+- `dijit/_BidiSupport` : (1.9) replaced with dojo config setting like `data-dojo-config="has:{'dojo-bidi': true}"`
+
+- `dojox/charting/BidiSupport` : (1.9) replaced with dojo config setting like `data-dojo-config="has:{'dojo-bidi': true}"`
+
+- `dojo.global` : was originally created to either:
+	- access the global scope in a device independent way. (i.e for code to run on browsers and server side), see: [dojo/_base/kernel::global](http://livedocs.dojotoolkit.org/dojo/_base/kernel#global)
+	- (for browser only code) access the window object such that other code could redirect the window object to point to a different frame. see: [dojo/_base/window::withGlobal](http://livedocs.dojotoolkit.org/dojo/_base/window#withglobal) and [dojo/_base/window::setContext](http://livedocs.dojotoolkit.org/dojo/_base/window#setcontext).
+	- Regarding the first usage, modern AMD modules probably should not be trying to set or read global variables at all.
+	- As for accessing the window object (to control scrolling, setup handlers, etc.), most application code can simply access the `window` global, rather than accessing [dojo/_base/window::global](http://livedocs.dojotoolkit.org/dojo/_base/window#withglobal).
+
+- `lang.getObject()` : Review to make sure that global objects are not being used.
+		- instead, objects should be passed as arguments or via messages.
+
+
+
+## Dijit Templates
+
+- Use data-dojo-type rather than dojoType
+- Use data-dojo-attach-point rather than dojoAttachPoint
+- Use data-dojo-attach-event rather than dojoAttachEvent
+- Do not use "id" attributes.
+ 	- The exception is for `<label for='id'><input id='id' ...>`
+	- In this case, the ID must be unique (ie. `id='FirstName${id}'` using widget's instance id)
+- Use localized text strings, using standard Dojo I18N implementation.
+- Utilize a single base variable to hold all instance strings
+	- ie. `text : i18nTextFromNLS,` and then in template use `${text.title}`
+- Use `dap*` prefix convention for data-dojo-attach-point in HTML templates
+	- Ex.  `<div data-dojo-attach-point="dapGridTarget"></div>`
+- Use `dea*` prefix convention for data-dojo-attach-event targets
+	- This makes it obvious in the controller module when a function would be called (eg )
+	- Template ex. `<button data-dojo-attach-event="onClick:daeShowButtonClicked" />`
+	- Controller ex. `daeShowButtonClicked : function(evt) { ... }`
+- Use AMD module ID notation (eg `foor/Bar`) notation, not dot-notation (`a.b.c`)
+
+## Misc Tips
+
+- Don't bind to the DOM Level 0 "onload" attribute, instead, use `dojo/domReady!` AMD loader plugin and `require()`
+
+
 ## Reference Links
 
 - [IBM Dojo Toolkit - Dojo Accessibility](https://w3-connections.ibm.com/wikis/home?lang=en-us#!/wiki/W25125222b815_4ba8_aef1_a36a02f5bfd1/page/Dojo%20Accessibility)

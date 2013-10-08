@@ -35,6 +35,9 @@ This section includes best practices regarding development of HTML source code
 	– Bad: `<div id=”myTarget" />`
 	– Good: `<div id=”myTarget”></div>`
 
+- Use AMD `require()` to load built layer files and scripts, rather than `<script>` tags
+	- The exception include the main "loader script" (ie r.js or dojo.js), and 3rd party libraries that are not AMD compatible
+
 - NEVER have duplicate "id" attributes
 	– Potentially common in portal and mashups
 	– Alternative is to use CSS classname addressing and queries

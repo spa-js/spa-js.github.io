@@ -52,6 +52,20 @@ Node Package Manager (NPM), which is part of NodeJS, provides a clean and organi
 [Travis CI](http://about.travis-ci.org/) is a hosted continuous integration service for the open source community.
 
 
-### Image Optimization
 
-- [Tools for image optimization](http://addyosmani.com/blog/image-optimization-tools/) - Here's a great read that includes an awesome list of tools for optimizing images as part of a CI process.
+
+## Scaffolding
+Scaffolding is a good way to get started with a new development project.
+It provides a template and some times prompts the user to be able customized the template.
+Some project provides templates for different stages of development from unit testing to mobile development.
+When getting started with a new technology or framework is sometimes difficult to users look for a fast way
+to get a basic "Hello World" project created.
+These scaffolding templates are usually created in the open collaboration by experts on the technology and
+try to embed best practices that they them selfs learned over time and want to help others not make again.
+
+Some templates cover basic web apps like putting html, css, and js together to more complex project like
+dojo builds with integration into hybrid Apps.
+
+### [Yeoman](http://yeoman.io)
+
+
