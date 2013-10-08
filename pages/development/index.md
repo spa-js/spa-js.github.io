@@ -10,7 +10,17 @@ category: bp
 
 This document details the best practices associated with development and debugging applications.
 
-## Coding
+- [HTML](./html.html)
+- [JavaScript](./javascript.html)
+- [CSS](./css.html)
+- [Images](./images.html)
+- [Responseive Design](./responsive-design.html)
+- [Testing](./testing.html)
+- [Accessibilityy](./accessibility.html)
+- [Globalization](./globalization.html)
+
+
+## Clean Coding
 Writing clean and maintainable code should be a priority for every developer. Sloppy programming practices is unprofessional, and shows disdain for your fellow programmers.
 
 - Coding Style guides
@@ -25,8 +35,11 @@ Writing clean and maintainable code should be a priority for every developer. Sl
 
 
 ## Linting
-- JSHint - A popular fork of the original JSLint.
+
+- [JSLint](http://jslint.com/) - The grandfather of JavaScript lint tools by Doug Crockford. Read the instructions. Please.
+- [JSHint](http://jshint.com/) - A popular fork of the original JSLint.
 - [ESHint](https://github.com/nzakas/eslint) - A command line JS linter that enables a plugable list of tests. It shows promise as its more flexible than JSHint
+- [JSONLint](http://jsonlint.com/)jshint.com
 
 See the [Web Coding Checklist](./web_coding_checklist.html) for general guidance on code reviews.
 
@@ -47,6 +60,8 @@ dojo builds with integration into hybrid Apps.
 
 
 ## Code Editing
+
+
 
 ### Editor Config
 ### Autocompletation

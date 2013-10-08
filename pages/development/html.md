@@ -25,7 +25,7 @@ This section includes best practices regarding development of HTML source code
 - Support a mobile device's viewport with:
 	- `<meta name="viewport" content="width=device-width">`
 
-- No need to include “type” attributes on <script> and <style> elements
+- No need to include “type” attributes on `<script>` and `<style>` elements
 	- Good: `<script src="libs/myJsLib.js"></script>`
 	- Bad:  `<script type="text/javascript" src="libs/myJsLib.js"></script>`
 
