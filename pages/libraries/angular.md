@@ -12,4 +12,4 @@ category: bp
 
 - [Video: AngularJS Fundamentals In 60-ish Minutes](https://www.youtube.com/watch?v=i9MHigUZKEM) - Great introductory video on using Angular.
 - [AngularJS Learning](https://github.com/jmcunningham/AngularJS-Learning) - Many resources to aid you in learning Angular.
-
+- [Ultimate guide to learning AngularJS in one day](http://toddmotto.com/ultimate-guide-to-learning-angular-js-in-one-day/)

@@ -25,6 +25,11 @@ Instead of removing a substring using the above syntax is valid in some language
 
 ## General Recommendations
 
+- NEVER use invalid null `<script>` tag
+	– Bad: `<script src=”./js/hello.js” />`
+	– Good: `<script src=”./js/hello.js”></script>`
+	– Good: `<script>var x = 123;</script>`
+
 - Use explicit comparators (ie `===`) over coerced comparators (ie `==`).
 	- Using coerced comparators actually says convert the value types to match and then compare them. All the following evaluate to true:
 		- `"hello" == 1`
@@ -54,9 +59,13 @@ Instead of removing a substring using the above syntax is valid in some language
 ```
 	- Taken from a [Talk by Doug Crawford](https://www.youtube.com/watch?feature=player_embedded&v=_EANG8ZZbRs#t=1105)
 
-- Never leave dangling commas in lists and object definitions
+- NEVER leave dangling commas in lists and object definitions
 	- It used to cause IE to throw errors.
 	- All browsers allow it, but its sloppy programming
+	- Tip when generating visual lists, use an Array and join results
+		- eg. `console.log( "List of names: ", nameList.join(", ") );`
+	- Bad: `var x = [0,1,2,3,];`
+	– Bad: `var y = { a:1, b:”B”, c:x, };`
 
 - Always, Always use semi-colons.
 	- Yes, JavaScript will do a best guess on end of lines
@@ -75,9 +84,16 @@ Instead of removing a substring using the above syntax is valid in some language
 	- Local variables are at `function` scope, meaning they are accessible anywhere within the enclosing function, not just within enclosing `{ ... }` blocks.
 	- This applies to `for( var i in ...) { ... }` blocks as well.  `i` is not scoped to the for block, but its outer containing function.  This is just such a common practice in most other languages, that people expect this to be the case in JavaScript too. Its not.
 
+- NEVER leave `debugger` statements in code
+	- debugger statement can be used to force browser breakpoint
+	- Better to locate desired code location and manually set breakpoint using browser tools.
+	- Will break minification and optimization builds.
+
+
 - Read the [JSLint documentation](http://www.jslint.com/lint.html)
 	- Then re-read it until you understand and accept (almost) all the rules defined.
 	- You **will** be a better JavaScript programmer afterwards.
+
 
 
 ## Truth and Truthyness

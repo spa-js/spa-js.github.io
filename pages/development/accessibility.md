@@ -16,6 +16,12 @@ category: bp, app-arch
 	- Rational XXX tools
 - Use HTML5 semantic nodes like `<nav>` and `<header>`
 - Use proper input tags (eg `<button>` and `<a>`) for nodes with event handlers like `onClick`.
-- Use linked `<label` tags for all input elements.
+- Use linked `<label>` tags for all input elements.
 - Use CSS for layout, not tables.
 
+## Mobile References
+
+- [Accessibility Programming Guide for iOS](http://bit.ly/Kaaa9i)
+- [Android Designing for Accessibility](http://bit.ly/IxuFtK)
+- [Blackberry Accessibility](http://bit.ly/VKXo37)
+- [Microsoft UI Automation](http://bit.ly/TZdUkJ)

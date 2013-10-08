@@ -6,7 +6,14 @@ category: bp
 
 ## Introduction
 
-## Dependencies
+Continuous integration (CI) should be one of the first tasks of any development project. It is typically saved as a task to complete towards the end of a projects development. There should never be a human intervention during the build/test/deployment of the application. This should be repeatable at any time, and on regular schedules.
+There is no excuse for any surprises during a build. This is especially true of a production build.
+
+There are many tools that assist in CI. These range from the host centric **ANT**, **Maven**, and **Hudson**  build tools, to modern day solutions such as **Yeoman** (Yo, Grunt, Bower), and even custom Node scripts.
+Find the tool(s) that work for your environment and use them.
+
+
+## Package Management (Dependencies)
 
 ### NPM
 Node Package Manager (NPM), which is part of NodeJS, provides a clean and organized way to publish application modules that have fixed dependencies.
