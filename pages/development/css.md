@@ -8,6 +8,34 @@ category: bp
 
 # CSS Development
 
+## General Best Practices
+
+- Use a reset CSS base line like [Normalize CSS](http://necolas.github.io/normalize.css/) to ensureconsstent styling across all browsers. Most theme-able toolkits also provide normalization.
+
+- Your CSS should contain a rule that applies “display:block” to the HTML5 elements you use:
+	- ie. `header,hgroup,nav,section,article,aside,footer { display:block; }`
+	- Normalization CSS should do this for you
+
+- Use percentages for layouts, not pixels
+	- Key to responsive design.
+	- When paired with media queries, serves as a foundation for “Mobile First” design
+	- ie. `titleSection { height: 10%; }`
+
+- Use relative font sizes, not fixed pixel sizes
+	- Helps in responsive and accessibility
+	- Good: `h1 { text-size: 1.25em; }`
+	- Bad: `h1 { text-size: 24px; }`
+
+- Use CSS3 features where possible, instead of images or javascript
+	- Improved performance
+	- Less images to download/process
+	- Proper separation of concerns (CSS for styling, JavaScript for logic)
+
+### General References
+- [Best Practices for a Faster Web App with HTML5](http://www.html5rocks.com/en/tutorials/speed/quick/)
+- [HTML5 Best Practices for Designers](http://www.instantshift.com/2012/03/27/html5-best-practices-for-designers/)
+- [HTML5 Essentials with Best Practices](http://webrevisions.com/tutorials/html5-essentials-with-best-practices/#.UYu3QiuDTmF)
+
 
 ## Responsive Web Design
 
@@ -40,8 +68,7 @@ There are several popular preprocessors implementations:
 The big concern when using preprocessors is that you must implement a new build process to manage them. Most allow for runtime processing which performs the conversion on the fly and is valuable during development. But, this is an anti-pattern post-development, as it has a negative impact on startup time.
 
 ### Resources:
-[CSS Processors compared](http://abhisharma.co.in/#sassvsless)
-
+- [CSS Processors compared](http://abhisharma.co.in/#sassvsless)
 
 
 
