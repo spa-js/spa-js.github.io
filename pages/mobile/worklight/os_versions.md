@@ -10,14 +10,14 @@ category: bp
 
 ## Examples
 
-- Soft keyboard affects viewport.height when shown/hidden dynamically in iOS7, but did not in iOS6.
+- Soft keyboard affects `viewport.height` when shown/hidden dynamically in iOS7, but did not in iOS6.
 	- This type of change is done by the browser implementation, and controlled via `<meta>` viewport tag
 	- See this [Stackover article](http://stackoverflow.com/questions/18970865/ios-7-input-elements-moving-fixed-positioned-elements)
 
 - It is possible that browser (even native) screen dimensions available to apps might change between major OS versions.
 	- The proper way to deal with this is CSS media queries, just as if it's a new type of device with different screen dimensions (even though in this case its caused by the OS/software updates)
 	- Specific example is the addl 20px height given to all apps in iOS7 (native/hybrid/web)
-	- One possible general solution if you have a header <div> in your app is to add `padding-top: 20px` within a media query that matches the iOS7 screen heights (one for portrait and one for landscape) vs. the default that doesn't add the padding
+	- One possible general solution if you have a header `<div>` in your app is to add `padding-top: 20px` within a media query that matches the iOS7 screen heights (one for portrait and one for landscape) vs. the default that doesn't add the padding
 	- Or vice-versa, make the new default styling with the extra padding going forward, and remove the extra top padding in a media query matching the older screen dimensions
 
 

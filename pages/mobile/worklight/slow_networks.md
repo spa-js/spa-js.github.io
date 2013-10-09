@@ -32,7 +32,7 @@ var invocationData = {
 WL.Client.invokeProcedure(invocationData, options);
 ```
 
-During laboratory tests, it was found that compressing adapter responses improves the response time by up to **73%** especially for large payloads on slow networks. The following chart shows typical response times with compression turned on and off for various sizes of payload*.
+During laboratory tests, it was found that compressing adapter responses improves the response time by up to **73%** especially for large payloads on slow networks. The following chart shows typical response times with compression turned on and off for various sizes of payload.
 
 As you can notice from the chart, for data sizes of 500 kilobytes and above, the gap widens and compressing the payload pays good dividends. In addition to reducing the response time, data charges are reduced too.
 
@@ -58,7 +58,7 @@ WL.Client.invokeProcedure(invocationData, options);
 
 The above snippet of code demonstrates how to increase the adapter timeout from the default of 30 seconds to 60 seconds.
 
-The following chart shows typical response times for various payloads*
+The following chart shows typical response times for various payloads.
 
 
 As you can see from the chart, for payloads of size of approximately 250 KB and above, the data transfer time exceeds the default timeout interval. This necessitates that applications expecting data in this range should adjust the adapter response timeout appropriately.
