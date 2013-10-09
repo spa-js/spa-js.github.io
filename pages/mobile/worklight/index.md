@@ -10,6 +10,10 @@ category: bp
 ## Introduction
 I know we don't want Worklight specific guidance here, but I wanted a place to put notes, tips, etc for now.
 
+## Child Topics:
+- [Building apps and Configuring the Worklight server for use in slow networks](./slow_networks.html)
+- [Dealing with new device O/S versions](./os_versions.html)
+
 
 ## Simple and Clean Previews
 For most day to day developer testing, having the full Worklight simulator environment can be obstructive. It takes longer to load, makes it harder to examine the DOM, and generally is not helpful. Granted it is useful and needed when testing device features, such as the camera. But the 80% of the time, developers only need a simple browser based experience for debugging.
